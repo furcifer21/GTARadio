@@ -1,0 +1,15 @@
+/.idea
+/.vscode
+/nbproject
+/.vagrant
+/node_modules
+npm-debug.log
+yarn-error.log
+
+/public/js/*
+/public/css/*
+/public/fonts/vendor/*
+/public/images/vendor/*
+
+/.next/*
+/out/*
