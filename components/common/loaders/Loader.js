@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from "react";
-import {Router} from "next/router";
+import React from "react";
 import Image from "next/image";
 
 export default function Loader({size, maskColorInherit, loaderWhite}) {
