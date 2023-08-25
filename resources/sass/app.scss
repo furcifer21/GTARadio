@@ -1,14 +1,17 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 // Vendors
 
 // Partials styles
 
 // Page styles
+@import 'pages/slider-page/slider-page';
 
 // App helpers
 @import 'common';

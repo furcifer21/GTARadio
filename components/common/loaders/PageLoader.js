@@ -30,7 +30,7 @@ export default function PageLoader() {
     return (
         <>
             {loading &&
-                <div className="page-loader-mask position-fixed w-100 h-100">
+                <div className="page-loader-mask fixed w-full h-full z-20">
                     <Loader size={80}/>
                 </div>
             }

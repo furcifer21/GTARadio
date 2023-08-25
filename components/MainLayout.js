@@ -17,9 +17,9 @@ export default function MainLayout({children, seo}) {
                 <title>{seo.title || 'GTARadio'}</title>
                 <meta name="description" content={seo.description || 'GTARadio'} />
             </Head>
-            <div className="d-flex flex-column vh-100 position-relative">
+            <div>
                 <Header />
-                <main className="flex-grow-1">
+                <main>
                     {children}
                 </main>
                 <Footer />

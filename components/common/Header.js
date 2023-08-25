@@ -16,13 +16,13 @@ export default function Header() {
     }
 
     return (
-        <header>
+        <header className="fixed w-full z-10">
             <div className="container">
                 <div className="d-flex justify-content-between">
                     <span>header {t('exampleWord')}</span>
                     <div className="d-flex">
                         <div className={`dropdown-item pointer py-1 px-4 ${locale === 'ru' ? 'text-danger' : ''}`} onClick={() => changeLocale('ru')}>Русский</div>
-                        <div className={`dropdown-item pointer py-1 px-4 ${locale === 'en' ? 'text-danger' : ''}`} onClick={() => changeLocale('en')}>English</div>
+                        <div className={`dropdown-item pointer py-1 px-4 ${locale === 'en-US' ? 'text-danger' : ''}`} onClick={() => changeLocale('en-US')}>English</div>
                     </div>
                 </div>
             </div>

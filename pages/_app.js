@@ -17,14 +17,9 @@ axios.defaults.httpsAgent = new https.Agent({
 const App = ({ Component, pageProps }) => {
     const store = useStore(pageProps.initialReduxState);
 
-    // including bootstrap js
-    useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
-
     if (process.browser) {
         const router = useRouter();
-        const defaultLocale = 'en';
+        const defaultLocale = 'en-US';
         const userLocale = localStorage.getItem('gtaRadioLocale') ;
 
         // для ботов показываем ту страницу котроую он запросил, без редиректа

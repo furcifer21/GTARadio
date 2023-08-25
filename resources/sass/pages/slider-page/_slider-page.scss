@@ -1,0 +1,55 @@
+.height-in {
+  height: 0;
+  animation: heightIn .8s ease-in-out forwards;
+}
+
+.height-out {
+  height: 100%;
+  animation: heightOut ease-in-out forwards;
+}
+
+.width-in {
+  width: 0;
+  animation: widthIn ease-in-out forwards;
+}
+
+.width-out {
+  width: 0;
+  animation: widthOut ease-in-out forwards;
+}
+
+@keyframes heightIn {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes heightOut {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes widthIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes widthOut {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
