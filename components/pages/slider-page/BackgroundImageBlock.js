@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import Image from "next/image";
+import ImageCarousel from "../../common/ImagesCarousel";
 
 export default function BackgroundImageBlock({ images, colors, animationStart, animation }) {
+    // toDo логика анимации на десерт
     const [animationClass, setAnimationClass] = useState();
     const duration = animation.animationDuration;
 
@@ -10,14 +11,11 @@ export default function BackgroundImageBlock({ images, colors, animationStart, a
     }, [animationStart]);
 
     return (
-        <div className="backgound-block relative h-screen flex justify-between">
-            <div className="absolute w-full h-full">
-                {/*при смене animationStart скрывать/показывать изображение с помощью opacity
-                перед/после отработки анимации блоков*/}
-                <Image src={images}
-                       layout="fill"
-                       objectFit="cover"
-                       alt={`background`}
+        <div className="backgound-block absolute w-full h-screen flex justify-between">
+            <div className="absolute top-0 left-0 w-full h-full">
+                <ImageCarousel title={'background'}
+                               images={images}
+                               cover
                 />
             </div>
             <div className="background-item relative hidden xl:block xl:w-2/6 h-full">
@@ -26,12 +24,12 @@ export default function BackgroundImageBlock({ images, colors, animationStart, a
                 ></div>
             </div>
             <div className="background-item relative w-full md:w-2/4 xl:w-2/6 h-full">
-                <div className={`w-full h-full opacity-70 ${animationClass}`}
-                     style={{backgroundColor: colors.second, animationDuration: `${duration}s`, animationDelay: `${duration}s`}}
+                <div className={`w-full h-full opacity-90 ${animationClass}`}
+                     style={{backgroundColor: colors.second, animationDuration: `${duration}s`, animationDelay: `${duration}s`, background: `repeating-linear-gradient(45deg, #fff, #fff 5px, ${colors.second} 5px, ${colors.second} 140px)`, filter: 'blur(2px)'}}
                 ></div>
             </div>
             <div className="background-item relative hidden md:block w-2/4 xl:w-2/6 h-full">
-                <div className={`w-full h-full opacity-70 ${animationClass}`}
+                <div className={`w-full h-full opacity-90 ${animationClass}`}
                      style={{backgroundColor: colors.third, animationDuration: `${duration}s`, animationDelay: `${duration*2}s`}}
                 ></div>
             </div>

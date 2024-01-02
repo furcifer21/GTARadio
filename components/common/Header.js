@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 export default function Header() {
     const { t } = useTranslation();
@@ -16,15 +17,28 @@ export default function Header() {
     }
 
     return (
-        <header className="fixed w-full z-10">
-            <div className="container">
-                <div className="d-flex justify-content-between">
-                    <span>header {t('exampleWord')}</span>
-                    <div className="d-flex">
-                        <div className={`dropdown-item pointer py-1 px-4 ${locale === 'ru' ? 'text-danger' : ''}`} onClick={() => changeLocale('ru')}>Русский</div>
-                        <div className={`dropdown-item pointer py-1 px-4 ${locale === 'en-US' ? 'text-danger' : ''}`} onClick={() => changeLocale('en-US')}>English</div>
-                    </div>
-                </div>
+        <header className="fixed w-full">
+            <div className="header-buttons flex justify-center xl:justify-start">
+                <button type="button"
+                        id="home-btn"
+                        className={`btn-icon border-0 position-relative d-md-none ${router.pathname === '/' ? 'active' : ''}`}
+                >
+                    {router.pathname !== '/' &&
+                        <Link href="/"><a className="fake-link-block"></a></Link>
+                    }
+                    <svg className="svg-icon">
+                        <use xlinkHref="/images/sprite.svg#home-icon"></use>
+                    </svg>
+                </button>
+                <button type="button"
+                        id="burger-btn"
+                        className={`btn-icon border-0 position-relative d-xl-none `}
+
+                >
+                    <svg className="svg-icon">
+                        <use xlinkHref="/images/sprite.svg#burger-icon"></use>
+                    </svg>
+                </button>
             </div>
         </header>
     )
